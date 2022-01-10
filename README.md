@@ -5,8 +5,6 @@
 - Se debe agregar un archivo **config.txt** para las credenciales de Linkedin:
 
 ```` 
-```
 minombre@correo.com
 mypassword
-```
 ````
