@@ -1,4 +1,4 @@
-#Información:
+# Información:
 
 - La carpeta de salida de los archivos esta en la carpeta Output
 - Tambien se impirme informacion por consola
