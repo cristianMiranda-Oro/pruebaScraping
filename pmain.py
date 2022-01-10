@@ -5,7 +5,6 @@ Created on Sun Jan  9 13:54:35 2022
 @author: CRISTIANMIRANDA
 """
 
-
 import os, random, sys, time
 import pandas as pd
 import re
@@ -30,7 +29,8 @@ if __name__ == "__main__":
     password = lines[1]
     file.close()
 
-    usuario = '/in/catarinasantosbotelho/'
+    #usuario = '/in/catarinasantosbotelho/'
+    usuario = '/in/laura-m-cardona-otalora-259578201/'
     
     #Iniciamos la configuracion del browser
     config = Confi(password, username, "driver/chromedriver.exe")

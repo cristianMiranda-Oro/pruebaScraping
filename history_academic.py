@@ -37,6 +37,7 @@ class Academic():
             else:
                 print("Esta expandido")
         except:
+            soup = BeautifulSoup(self.browser.page_source, 'lxml')
             print("No tiene mucha educacion")
             
         
