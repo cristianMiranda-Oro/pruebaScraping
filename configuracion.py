@@ -9,13 +9,14 @@ from urllib.parse import urlparse
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-class confi:
+from selenium.webdriver.common.by import By
 
-    def __init__(self, password, username, driver, usuario):
+class Confi:
+
+    def __init__(self, password, username, driver):
         self.password = password
         self.username = username
         self.browser = webdriver.Chrome(driver)
-        self.usuario = usuario
     
     def iniciar_seccion(self):
         self.browser.get('https://www.linkedin.com/login/')
@@ -27,10 +28,9 @@ class confi:
         self.elementID.send_keys(self.password)
         self.elementID.submit()
         
-    def informacion_perfil(self):
-        self.browser.get("https://www.linkedin.com"+self.usuario)
-        soup = BeautifulSoup(self.browser.page_source)
-        nombrePerfil = soup.find('h1', {'class' : 'text-heading-xlarge inline t-24 v-align-middle break-words'})
-        print("Nombre del perfil: ", nombrePerfil.get_text().strip)
+        return self.browser
+        
+    
+        
         
         
