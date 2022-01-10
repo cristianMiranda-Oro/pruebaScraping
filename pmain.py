@@ -30,21 +30,25 @@ if __name__ == "__main__":
     file.close()
 
     #usuario = '/in/catarinasantosbotelho/'
-    usuario = '/in/laura-m-cardona-otalora-259578201/'
+    usuario = '/in/isaiasfuenzalida/'
     
     #Iniciamos la configuracion del browser
     config = Confi(password, username, "driver/chromedriver.exe")
     browser = config.iniciar_seccion()
     
     #Obtenemos la informacion del perfil
+    print("####################Informacion del perfil########################")
     perfil = Perfil(browser, usuario)
     perfiList = perfil.obtener_informacion()
+    print()
     
     #Obtenemos la informacion academica
+    print("####################Informacion academica#########################")
     historyAcademic = Academic(browser, usuario)
     historyAcademicList = historyAcademic.obtener_educacion()
     
     #Obtenemos la informacion de intereses
+    print("####################Informacion de intereses#######################")
     intereses = Interes(browser, usuario)
     nombresList, interesList = intereses.obtener_intereses()
     
