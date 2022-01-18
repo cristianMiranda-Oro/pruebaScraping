@@ -45,6 +45,7 @@ class Interes():
             
             
             #Obtnemos los intereses
+            i=0
             for link in links:        
                 inter = []
                 self.browser.get("https://www.linkedin.com"+link)
@@ -53,9 +54,11 @@ class Interes():
                 items = soup.findAll('span', {'class':'pv-entity__summary-title-text'})
                 
                 try:
+                    print("**************"+nombres[i]+"***************")
                     for x in items:
                         print("----: ", x.get_text().strip())
                         inter.append(x.get_text().strip())
+                    i = i + 1
                 except:
                     inter.append("No found")
                     print("----: No found")

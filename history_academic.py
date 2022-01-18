@@ -33,12 +33,13 @@ class Academic():
             estado = soup.find('button', {'class' : 'pv-profile-section__see-more-inline pv-profile-section__text-truncate-toggle artdeco-button artdeco-button--tertiary artdeco-button--muted'})
             
             if estado != None:
-                print("No esta expandido")
+                pass
+                #print("No esta expandido")
             else:
-                print("Esta expandido")
+                pass
+                #print("Esta expandido")
         except:
             soup = BeautifulSoup(self.browser.page_source, 'lxml')
-            print("No tiene mucha educacion")
             
         
         #Obtener tag educacion

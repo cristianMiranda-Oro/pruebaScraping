@@ -23,14 +23,17 @@ from selenium.webdriver.common.by import By
 if __name__ == "__main__":
     
     # Leemos las credenciasles de linkedin
-    file = open('config.txt')
+    file = open('config.txt', 'r')
     lines = file.readlines()
     username = lines[0]
     password = lines[1]
     file.close()
 
+    usuario = '/in/jdleyva/'
     #usuario = '/in/catarinasantosbotelho/'
-    usuario = '/in/isaiasfuenzalida/'
+    #usuario = '/in/isaiasfuenzalida/'
+    #usuario = '/in/eslendy-pinzón-026582182/'
+    #usuario = '/in/sergioaleal/'
     
     #Iniciamos la configuracion del browser
     config = Confi(password, username, "driver/chromedriver.exe")
@@ -51,6 +54,7 @@ if __name__ == "__main__":
     print("####################Informacion de intereses#######################")
     intereses = Interes(browser, usuario)
     nombresList, interesList = intereses.obtener_intereses()
+    
     
     ##################Guardamos la informacion#################################
     

@@ -23,7 +23,7 @@ class Perfil():
     def obtener_informacion(self):
         
         self.browser.get("https://www.linkedin.com"+self.usuario)
-        soup = BeautifulSoup(self.browser.page_source)
+        soup = BeautifulSoup(self.browser.page_source, 'lxml')
         
         #link del perfil
         perfil = []
@@ -46,9 +46,15 @@ class Perfil():
         print("Ubicacion del perfil: ", ubicacionPerfil.get_text().strip())
         perfil.append(ubicacionPerfil.get_text().strip())
 
-
-        nombrePerfil = soup.find('h1', {'class' : 'text-heading-xlarge inline t-24 v-align-middle break-words'})
-        print("Nombre del perfil: ", nombrePerfil.get_text().strip)
+        educaEmple = soup.findAll('div', {'style' : "line-height:2rem;max-height:4rem;-webkit-line-clamp:2;"})
+        #Obtener el ultimo empleo
+        print("Ultimo empleo: ", educaEmple[0].get_text().strip())
+        perfil.append(educaEmple[0].get_text().strip())
+        
+        #Obtener el ultima educacion
+        print("Ultima Educacion: ", educaEmple[1].get_text().strip())
+        perfil.append(educaEmple[1].get_text().strip())
+        
         
         return perfil
     
